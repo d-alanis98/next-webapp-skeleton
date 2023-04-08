@@ -1,3 +1,42 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    // Force single quotes
+    "quotes": ["error", "single"],
+    // Force jsx single quotes
+    "jsx-quotes": ["error", "prefer-single"],
+    // Force semicolons
+    "semi": ["error", "always"],
+    // Use 2 spaces to indent our code
+    "indent": ["error", 2],
+    // Avoid extraneous spaces
+    "no-multi-spaces": ["error"],
+    // Force space in brackets, object curly and computed properties
+    "object-curly-spacing": ["error", "always"],
+    "array-bracket-spacing": ["error", "always", { 
+      "arraysInArrays": false,
+      "objectsInArrays": false
+    }],
+    "computed-property-spacing": ["error", "always"],
+    // JSX curly spacing
+    "react/jsx-curly-spacing": ["error", {
+      "when": "always",
+      "allowMultiline": true,
+      "children": true, 
+      "attributes": true
+    }]
+  }
 }
